@@ -16,3 +16,5 @@ define( 'WPFL_VERSION', '0.1' );
 define( 'WPFL_PATH', plugin_dir_path(__FILE__) );
 define( 'WPFL_URL', plugin_dir_url(__FILE__) );
 define( 'WPFL_TEXT_DOMAIN', 'wpfl' );
+ 
+require_once WPFL_PATH . 'includes/core.php';

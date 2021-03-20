@@ -1,0 +1,18 @@
+.wpfl-login-form-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.wpfl-input {
+    display: block;
+    width: 100%;
+}
+
+.wpfl-from-group {
+    margin-bottom: 1rem;
+}
+
+.wpfl-from-group-submit {
+    display: flex;
+    justify-content: space-between;
+}

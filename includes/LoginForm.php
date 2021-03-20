@@ -76,19 +76,20 @@ class LoginForm {
         parse_str( $querystring_url['query'], $querystring );
 
         // Validate Username input
+        $errors = array();
         if ( isset( $params['wpfl-username'] )  && empty( $params['wpfl-username'] ) ) {
-            wp_send_json_error(
-                array(
-                    'message' => __('Missing username', WPFL_TEXT_DOMAIN)
-                )
-            );
+            array_push( $errors, __('The username field is empty.', WPFL_TEXT_DOMAIN));
         }
 
         // Validate Password input
         if ( isset($params['wpfl-password']) && empty( $params['wpfl-password'] ) ) {
+            array_push( $errors, __('The password field is empty.', WPFL_TEXT_DOMAIN));
+        }
+        
+        if ( !empty( $errors ) ) {
             wp_send_json_error(
                 array(
-                    'message' => __('Missing password', WPFL_TEXT_DOMAIN)
+                    'errors' => $errors
                 )
             );
         }
@@ -105,7 +106,7 @@ class LoginForm {
         if ( is_wp_error( $user ) ) {
             wp_send_json_error(
                 array(
-                    'message' => __('The username or password you entered are incorect.', WPFL_TEXT_DOMAIN)
+                    'errors' => array( __( 'The username or password you entered are incorect.', WPFL_TEXT_DOMAIN) )
                 )
             );
         }

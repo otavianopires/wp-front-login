@@ -23,8 +23,8 @@
                     window.location.replace( response.data.redirect_url );
                     wpflAlert.addClass('wpfl-alert-success').html(response.data.message).show();
                 } else {
-                    console.log(response.data.message);
-                    wpflAlert.addClass('wpfl-alert-error').html(response.data.message).show();
+                    console.log(response.data.errors);
+                    wpflAlert.addClass('wpfl-alert-error').html(response.data.errors.join('<br>')).show();
                 }
             })
             .always( function() {

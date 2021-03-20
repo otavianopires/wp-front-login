@@ -1,11 +1,13 @@
 <?php
 /**
  * Plugin Name:       WP Front Login
- * Plugin URI:        https://otavianopires.com
+ * Plugin URI:        https://github.com/otavianopires/wp-front-login
  * Description:       Customize you login, lost password, reset password, and profile forms.
  * Version:           0.1
  * Author:            Otaviano Pires Amancio
- * Author URI:        https://otavianopires.com
+ * Author URI:        https://github.com/otavianopires
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       wpfl
  * Domain Path:       /lang
  */

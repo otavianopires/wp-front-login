@@ -1,7 +1,7 @@
 === WP Front Login ===
 
-Customize you login, lost password, reset password, and profile forms
+Custom login form
 
 == Description ==
 
-This is a plugin to implement custom login, lost password, reset password, and profile forms
+This is a plugin to implement custom login form using a shortcode

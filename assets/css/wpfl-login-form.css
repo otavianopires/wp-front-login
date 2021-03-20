@@ -5,20 +5,21 @@
 
 .wpfl-alert {
     display: none;
+
     padding: .65rem 1rem;
     margin-bottom: 1rem;
-    border-radius: .25rem;
-
-    color: #ffffff;
-    background-color: #0763ef;
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 0.25rem;
 }
 
 .wpfl-alert-success {
-    background-color: #01bb54;
+    border-color: #01bb54;
 }
 
 .wpfl-alert-error {
-    background-color: #c51200;
+    border-color: #c51200;
 }
 
 .wpfl-input {

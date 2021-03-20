@@ -11,7 +11,8 @@
             let data = {
                 _ajax_nonce: wpfl_login_form_obj.nonce,
                 action: 'wpfl_login_form',
-                form_data: $( this ).serialize()
+                form_data: $( this ).serialize(),
+                querystring: location.search
             }
             
             $.post( wpfl_login_form_obj.ajax_url, data )

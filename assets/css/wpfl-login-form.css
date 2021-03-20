@@ -3,6 +3,24 @@
     max-width: 600px;
 }
 
+.wpfl-alert {
+    display: none;
+    padding: .65rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+
+    color: #ffffff;
+    background-color: #0763ef;
+}
+
+.wpfl-alert-success {
+    background-color: #01bb54;
+}
+
+.wpfl-alert-error {
+    background-color: #c51200;
+}
+
 .wpfl-input {
     display: block;
     width: 100%;

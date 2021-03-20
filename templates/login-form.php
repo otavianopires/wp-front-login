@@ -1,5 +1,7 @@
 <div class="wpfl-login-form-container">
 
+    <div class="wpfl-alert"></div>
+
     <form id="wpfl-login-form">
         <div class="wpfl-from-group">
             <label for="wpfl-username" class="wpfl-login-form-label"><?php _e('Username or Email Address', WPFL_TEXT_DOMAIN); ?></label>

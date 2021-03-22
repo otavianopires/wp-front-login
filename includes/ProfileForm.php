@@ -18,5 +18,18 @@ class ProfileForm {
      */
     private function init()
     {
+        add_shortcode( 'wpfl-profile-form', array( $this, 'profileFormShortcode') );
+    }
+
+    /**
+     * Output Profile Form template
+     */
+    public function profileFormShortcode( $atts )
+    {
+
+        ob_start();
+        include_once WPFL_PATH . 'templates/profile-form.php';
+        $output = ob_get_clean();
+        return $output;
     }
 }

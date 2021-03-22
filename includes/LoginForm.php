@@ -28,6 +28,7 @@ class LoginForm {
         add_action( 'wp_ajax_wpfl_login_form', array( $this, 'processLogin' ) );
 
         add_action( 'init', array( $this, 'redirectToFrontLoginForm' ));
+        add_action( 'wp_logout', array( $this, 'logoutRedirect') );
     }
 
     /**
@@ -156,6 +157,15 @@ class LoginForm {
             exit;
         }
         
+    }
+
+    /**
+     * Redirect user after logout
+     */
+    public function logoutRedirect()
+    {
+        wp_redirect( $this->login_url );
+        exit;
     }
 
 }

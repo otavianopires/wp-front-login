@@ -1,5 +1,12 @@
 <?php
 
 require_once WPFL_PATH . 'includes/LoginForm.php';
+require_once WPFL_PATH . 'includes/ProfileForm.php';
 
-new LoginForm();
+if ( class_exists('LoginForm') ) {
+    new LoginForm();
+}
+
+if ( class_exists('ProfileForm') ) {
+    new ProfileForm();
+}

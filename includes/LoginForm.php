@@ -27,7 +27,7 @@ class LoginForm {
         add_action( 'wp_ajax_nopriv_wpfl_login_form', array( $this, 'processLogin' ) );
         add_action( 'wp_ajax_wpfl_login_form', array( $this, 'processLogin' ) );
 
-        add_action( 'login_form_login', array( $this, 'redirectToFrontLoginForm' ));
+        add_action( 'init', array( $this, 'redirectToFrontLoginForm' ));
     }
 
     /**
@@ -132,27 +132,30 @@ class LoginForm {
      */
     public function redirectToFrontLoginForm()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    
-            // Check if there's any redirect to url
-            $redirect_to = isset( $_GET['redirect_to'] ) && !empty( $querystring['redirect_to'] ) ? esc_url_raw( $_GET['redirect_to'] ) : '';
-    
-            // Redirect user if logged in and redirect to contains a valid URL
-            if ( is_user_logged_in() && ! empty( $redirect_to ) ) {
-                wp_redirect( $redirect_to );
-                exit();
+        global $pagenow;
+        if ( $pagenow == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET' ) {
+
+            $action = isset($_GET['action']) ? $_GET['action'] : false;
+            $allowed_actions = array('logout', 'lostpassword', 'rp', 'resetpass');
+
+            if ( $action || in_array( $action, $allowed_actions) ) {
+                return;
+            }
+
+            $redirect_to = isset( $_GET['redirect_to'] ) ? esc_url( $_GET['redirect_to'] ) : false;
+
+            if ( $redirect_to ) {
+                $query_args = array( 'redirect_to' => $redirect_to );
+                $login_url = add_query_arg( $query_args, $this->login_url );
+            
+                wp_redirect( $login_url );
+                exit;
             }
             
-            // Redirect user from wp-login to Front Login Form
-            $login_url = $this->login_url;
-    
-            if ( !empty($redirect_to) ) {
-                $login_url = add_query_arg( 'redirect_to', $redirect_to, $login_url );
-            }
-    
-            wp_redirect( $login_url  );
-            exit();
+            wp_redirect( $this->login_url );
+            exit;
         }
+        
     }
 
 }

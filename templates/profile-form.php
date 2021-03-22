@@ -1,4 +1,18 @@
 <div class="wpfl-form-container wpfl-profile-form-container">
+    <?php if ( isset( $_GET['errors'] ) && !empty($errors_list) ) : ?>
+        <div class="wpfl-alert wpfl-alert-error">
+            <?php foreach ( $errors_list as $key => $error ) : ?>
+                <?php echo $error; ?>
+                <?php echo count($errors_list) > $key ? '<br>' : ''; ?>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( isset( $_GET['profile'] ) && $_GET['profile'] == 'updated' ) : ?>
+        <div class="wpfl-alert wpfl-alert-success">
+            Profile updated.
+        </div>
+    <?php endif; ?>
 
     <form id="wpfl-profile-form" action="<?php echo home_url('/wp-admin/admin-post.php'); ?>" method="post">
         <input name="action" type="hidden" id="action" value="wpfl_profile_update" />
@@ -9,17 +23,17 @@
             <legend><?php _e('Personal Options', WPFL_TEXT_DOMAIN); ?></legend>
             <div class="wpfl-from-group">
                 <label for="wpfl-first-name" class="wpfl-login-form-label"><?php _e('First Name', WPFL_TEXT_DOMAIN); ?></label>
-                <input type="text" name="wpfl-first-name", id="wpfl-first-name" class="wpfl-input wpfl-input-text" value="<?php the_author_meta( 'first_name', $current_user->ID ); ?>">
+                <input type="text" name="wpfl-first-name", id="wpfl-first-name" class="wpfl-input wpfl-input-text" value="<?php echo $first_name; ?>">
             </div>
 
             <div class="wpfl-from-group">
                 <label for="wpfl-last-name" class="wpfl-login-form-label"><?php _e('Last Name', WPFL_TEXT_DOMAIN); ?></label>
-                <input type="text" name="wpfl-last-name", id="wpfl-last-name" class="wpfl-input wpfl-input-text" value="<?php the_author_meta( 'last_name', $current_user->ID ); ?>">
+                <input type="text" name="wpfl-last-name", id="wpfl-last-name" class="wpfl-input wpfl-input-text" value="<?php echo $last_name; ?>">
             </div>
 
             <div class="wpfl-from-group">
                 <label for="wpfl-email" class="wpfl-login-form-label"><?php _e('Email Address', WPFL_TEXT_DOMAIN); ?></label>
-                <input type="email" name="wpfl-email", id="wpfl-email" class="wpfl-input wpfl-input-email" value="<?php the_author_meta( 'user_email', $current_user->ID ); ?>" readonly>
+                <input type="email" name="wpfl-email", id="wpfl-email" class="wpfl-input wpfl-input-email" value="<?php echo $user_email; ?>" readonly>
             </div>
         </fieldset>
 
@@ -28,7 +42,7 @@
         
             <div class="wpfl-from-group">
                 <label for="wpfl-description" class="wpfl-login-form-label"><?php _e('Description', WPFL_TEXT_DOMAIN); ?></label>
-                <textarea class="form-control" name="wpfl-description" id="wpfl-description" rows="4"><?php the_author_meta( 'description', $current_user->ID ); ?></textarea>
+                <textarea class="form-control" name="wpfl-description" id="wpfl-description" rows="4"><?php echo $description; ?></textarea>
             </div>
         </fieldset>
 

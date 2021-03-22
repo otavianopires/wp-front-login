@@ -4,14 +4,16 @@
 }
 
 .wpfl-alert {
-    display: none;
-
     padding: .65rem 1rem;
     margin-bottom: 1rem;
     color: #000000;
     background-color: #ffffff;
     border: 2px solid #000000;
     border-radius: 0.25rem;
+}
+
+.wpfl-alert-login {
+    display: none;
 }
 
 .wpfl-alert-success {

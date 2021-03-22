@@ -1,6 +1,6 @@
 <div class="wpfl-login-form-container">
 
-    <div class="wpfl-alert"></div>
+    <div class="wpfl-alert wpfl-alert-login"></div>
 
     <form id="wpfl-login-form">
         <div class="wpfl-from-group">
@@ -19,5 +19,10 @@
             <button class="wpfl-submit"><?php _e('Login', WPFL_TEXT_DOMAIN); ?></button>
         </div>
     </form>
+    <p>
+        <a class="forgot-password" href="<?php echo wp_lostpassword_url(); ?>">
+            <?php _e('Lost your password?', WPFL_TEXT_DOMAIN); ?>
+        </a>
+    </p>
 
 </div>

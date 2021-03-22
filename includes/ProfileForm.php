@@ -32,7 +32,7 @@ class ProfileForm {
      */
     public function profileFormShortcode( $atts )
     {
-        wp_enqueue_style( 'wpfl-login-form-style' );
+        wp_enqueue_style( 'wpfl-form-style' );
 
         $current_user = wp_get_current_user();
         if ($current_user) {

@@ -37,10 +37,16 @@ class LoginForm {
         wp_enqueue_style( 'wpfl-form-style' );
         wp_enqueue_script( 'wpfl-login-form-script' );
 
-        ob_start();
-        include_once WPFL_PATH . 'templates/login-form.php';
-        $output = ob_get_clean();
-        return $output;
+        if ( ! is_user_logged_in() ) {
+            ob_start();
+            include_once WPFL_PATH . 'templates/login-form.php';
+            $output = ob_get_clean();
+            return $output;
+        } else {
+            echo '<p>';
+            wp_loginout( home_url() );
+            echo '</p>';
+        }
     }
 
     /**

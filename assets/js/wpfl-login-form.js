@@ -20,10 +20,9 @@
             $.post( wpfl_login_form_obj.ajax_url, data )
             .done( function( response ) {
                 if ( response.success == true ) {
-                    window.location.replace( response.data.redirect_url );
                     wpflAlert.addClass('wpfl-alert-success').html(response.data.message).show();
+                    window.location.replace( response.data.redirect_url );
                 } else {
-                    console.log(response.data.errors);
                     wpflAlert.addClass('wpfl-alert-error').html(response.data.errors.join('<br>')).show();
                 }
             })

@@ -1,6 +1,7 @@
-.wpfl-login-form-container {
+.wpfl-form-container {
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .wpfl-alert {
@@ -24,9 +25,8 @@
     border-color: #c51200;
 }
 
-.wpfl-input {
-    display: block;
-    width: 100%;
+.wpfl-form fieldset {
+    margin-bottom: 1rem;
 }
 
 .wpfl-from-group {
@@ -36,4 +36,9 @@
 .wpfl-from-group-submit {
     display: flex;
     justify-content: space-between;
+}
+
+.wpfl-input {
+    display: block;
+    width: 100%;
 }

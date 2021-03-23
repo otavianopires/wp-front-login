@@ -14,7 +14,7 @@
         </div>
     <?php endif; ?>
 
-    <form id="wpfl-profile-form" action="<?php echo home_url('/wp-admin/admin-post.php'); ?>" method="post">
+    <form id="wpfl-profile-form" class="wpfl-form" action="<?php echo home_url('/wp-admin/admin-post.php'); ?>" method="post">
         <input name="action" type="hidden" id="action" value="wpfl_profile_update" />
         <?php wp_nonce_field( 'wpfl_profile_update', 'wpfl_profile_update_nonce' ) ?>
         <input name="wpfl-user-id" type="hidden" id="wpfl-user-id" value="<?php echo $current_user->ID; ?>" />

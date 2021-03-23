@@ -1,8 +1,8 @@
-<div class="wpfl-login-form-container">
+<div class="wpfl-form-container wpfl-login-form-container">
 
     <div class="wpfl-alert wpfl-alert-login"></div>
 
-    <form id="wpfl-login-form">
+    <form id="wpfl-login-form" class="wpfl-form" >
         <div class="wpfl-from-group">
             <label for="wpfl-username" class="wpfl-login-form-label"><?php _e('Username or Email Address', WPFL_TEXT_DOMAIN); ?></label>
             <input type="text" name="wpfl-username", id="wpfl-username" class="wpfl-input wpfl-input-username">

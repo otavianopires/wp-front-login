@@ -4,4 +4,4 @@ Custom login form
 
 == Description ==
 
-This is a plugin to implement custom login form using a shortcode
+This is a plugin to implement custom login and profile forms using a shortcode
